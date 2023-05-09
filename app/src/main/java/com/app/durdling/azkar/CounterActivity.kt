@@ -25,7 +25,7 @@ class CounterActivity : AppCompatActivity() {
         }
     }
 
-    fun nextZerker() {
+    fun nextZeker() {
         val v = getSystemService(Context.VIBRATOR_SERVICE) as Vibrator
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
             v.vibrate(VibrationEffect.createOneShot(500, VibrationEffect.DEFAULT_AMPLITUDE))
@@ -33,8 +33,8 @@ class CounterActivity : AppCompatActivity() {
             v.vibrate(500)
         }
         Handler(Looper.getMainLooper()).postDelayed({
-            binding.azkarViewPager.currentItem = ++binding.azkarViewPager.currentItem
-        }, 500)
+            binding.azkarViewPager.setCurrentItem(++binding.azkarViewPager.currentItem, true)
+        }, 250)
     }
 
 
